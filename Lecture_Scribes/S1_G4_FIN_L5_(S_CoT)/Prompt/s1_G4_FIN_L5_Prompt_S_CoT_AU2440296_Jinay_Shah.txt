@@ -1,0 +1,32 @@
+Prompt For Scribe:
+ 
+Generate a lecture scribe intended strictly as exam-oriented reference material for CSE 400: Fundamentals of Probability in Computing – Lecture 5, covering Bayes’ Theorem, Random Variables, and Probability Mass Function. Use only the attached Lecture 5 slides/PDF and any explicitly relevant textbook content connected to this lecture. Do not introduce any material, definitions, notation, explanations, intuition, examples, assumptions, or results that are not explicitly present in the provided context. While writing the scribe, reason step by step through the lecture content exactly as presented, including: Definitions and notation Assumptions and conditions Statements of results (including the Law of Total Probability and Bayes’ Formula) Proofs or derivations, with all intermediate steps Worked examples (including all numerical computations and conditional probability steps) Ensure that the logical flow mirrors the lecture sequence, including: Weighted average interpretation of conditional probabilities Learning-by-example applications of Bayes’ Theorem Formal derivation using the Law of Total Probability Definition and interpretation of random variables Distributions of discrete random variables Definition and properties of the probability mass function (PMF) PMF-based examples exactly as shown in the lecture The reasoning steps must be explicit and complete, so that a student preparing for a reading-based / closed-notes exam can reconstruct all arguments and calculations solely from this scribe. Maintain a formal academic tone, clear sectioning, and faithful adherence to the lecture’s scope and structure. Do not add summaries, commentary, simplifications, alternative explanations, or material beyond what appears in the provided context.
+
+
+
+
+
+Prompt For Scribe To Latex Code:
+Convert the following lecture scribe exactly as provided into LaTeX source code.
+
+Rules:
+
+The LaTeX output must match the provided scribe word for word, line for line, and symbol for symbol.
+
+Do not add, remove, rephrase, summarize, or reorganize any content.
+
+Do not correct typos or improve formatting beyond standard LaTeX structure.
+
+Preserve all section titles, numbering, mathematical notation, equations, probabilities, and symbols exactly as they appear.
+
+Use standard LaTeX environments for:
+
+Sections and subsections
+
+Displayed equations
+
+Inline mathematics
+
+Do not introduce any new explanations, comments, or annotations.
+
+Output only the complete LaTeX source code, enclosed in a single LaTeX document, suitable for direct compilation into a PDF.
