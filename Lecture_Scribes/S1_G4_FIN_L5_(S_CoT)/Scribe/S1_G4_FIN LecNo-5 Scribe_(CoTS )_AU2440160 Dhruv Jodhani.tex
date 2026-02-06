@@ -1,0 +1,333 @@
+\textbackslash documentclass{[}12pt{]}\{article\}
+
+\textbackslash usepackage{[}utf8{]}\{inputenc\}
+\textbackslash usepackage\{amsmath, amssymb\}
+\textbackslash usepackage\{geometry\}
+\textbackslash usepackage\{setspace\}
+\textbackslash usepackage\{parskip\}
+\textbackslash usepackage\{titlesec\}
+
+\textbackslash geometry\{margin=1in\} \textbackslash setstretch\{1.15\}
+
+\textbackslash titleformat\{\textbackslash section\}\{\textbackslash large\textbackslash bfseries\}\{\textbackslash thesection\}\{1em\}\{\}
+\textbackslash titleformat\{\textbackslash subsection\}\{\textbackslash normalsize\textbackslash bfseries\}\{\textbackslash thesubsection\}\{1em\}\{\}
+\textbackslash titleformat\{\textbackslash subsubsection\}\{\textbackslash normalsize\textbackslash bfseries\}\{\textbackslash thesubsubsection\}\{1em\}\{\}
+
+\textbackslash begin\{document\}
+
+\textbackslash begin\{center\} \textbackslash section*\{CSE400 --
+Fundamentals of Probability in Computing\}
+\textbackslash subsection*\{Lecture 5: Bayes' Theorem, Random Variables,
+and Probability Mass Function\} \textbackslash end\{center\}
+
+\textbackslash textbf\{Instructor:\} Dhaval Patel, PhD
+
+\textbackslash textbf\{Date:\} January 20, 2026
+
+\textbackslash vspace\{0.5em\} \textbackslash hrule
+\textbackslash vspace\{1em\}
+
+\textbackslash subsection*\{Outline\}
+
+\textbackslash begin\{itemize\} \textbackslash item Bayes' Theorem
+\textbackslash begin\{itemize\} \textbackslash item Weighted Average of
+Conditional Probabilities \textbackslash item Learning by Example
+\textbackslash item Formal Introduction: Law of Total Probability and
+Bayes' Theorem \textbackslash end\{itemize\}
+
+\textbackslash item Random Variables \textbackslash begin\{itemize\}
+\textbackslash item Motivation and Concept \textbackslash item Examples
+\textbackslash end\{itemize\}
+
+\textbackslash item Probability Mass Function (PMF)
+\textbackslash begin\{itemize\} \textbackslash item Concept
+\textbackslash item Examples \textbackslash end\{itemize\}
+
+\textbackslash item Class Participation -- Quiz
+\textbackslash end\{itemize\}
+
+\textbackslash vspace\{1em\} \textbackslash hrule
+\textbackslash vspace\{1.5em\}
+
+\textbackslash section*\{1. Bayes' Theorem\}
+
+\textbackslash subsection*\{1.1 Weighted Average of Conditional
+Probabilities\}
+
+Let (A) and (B) be events.
+
+Event (A) can be expressed as: \textbackslash{[} A = AB
+\textbackslash cup AB\^{}c \textbackslash{]}
+
+For an outcome to be in (A), it must either be in both (A) and (B), or
+be in (A) but not in (B).
+
+The events (AB) and (AB\textbackslash textsuperscript\{c\}) are mutually
+exclusive. By \textbackslash textbf\{Axiom 3\}: \textbackslash{[}
+\textbackslash Pr(A) = \textbackslash Pr(AB) +
+\textbackslash Pr(AB\^{}c) \textbackslash{]}
+
+Using conditional probability: \textbackslash{[} \textbackslash Pr(AB) =
+\textbackslash Pr(A \textbackslash mid B)\textbackslash Pr(B)
+\textbackslash{]} \textbackslash{[} \textbackslash Pr(AB\^{}c) =
+\textbackslash Pr(A \textbackslash mid B\^{}c)\textbackslash Pr(B\^{}c)
+\textbackslash{]}
+
+Substituting: \textbackslash{[} \textbackslash Pr(A) =
+\textbackslash Pr(A \textbackslash mid B)\textbackslash Pr(B) +
+\textbackslash Pr(A \textbackslash mid B\^{}c){[}1 -
+\textbackslash Pr(B){]} \textbackslash{]}
+
+\textbackslash textbf\{Statement:\}
+
+The probability of event (A) is a weighted average of conditional
+probabilities, with weights given by the probabilities of the
+conditioning events.
+
+\textbackslash vspace\{1em\} \textbackslash hrule
+\textbackslash vspace\{1.5em\}
+
+\textbackslash subsection*\{1.2 Learning by Example\}
+
+\textbackslash subsubsection*\{Example 3.1 (Part 1)\}
+
+An insurance company divides people into two classes:
+
+\textbackslash begin\{itemize\} \textbackslash item Accident prone
+\textbackslash item Not accident prone \textbackslash end\{itemize\}
+
+Statistics:
+
+\textbackslash begin\{itemize\} \textbackslash item An accident-prone
+person has an accident within a fixed 1-year period with probability
+(0.4). \textbackslash item A person who is not accident prone has an
+accident within the same period with probability (0.2).
+\textbackslash item (30\textbackslash\%) of the population is accident
+prone. \textbackslash end\{itemize\}
+
+Let:
+
+\textbackslash begin\{itemize\} \textbackslash item
+(A\textbackslash textsubscript\{1\}): policyholder has an accident
+within one year \textbackslash item (A): policyholder is accident prone
+\textbackslash end\{itemize\}
+
+Conditioning on whether the policyholder is accident prone:
+\textbackslash{[} \textbackslash Pr(A\_1) = \textbackslash Pr(A\_1
+\textbackslash mid A)\textbackslash Pr(A) + \textbackslash Pr(A\_1
+\textbackslash mid A\^{}c)\textbackslash Pr(A\^{}c) \textbackslash{]}
+
+Substituting: \textbackslash{[} \textbackslash Pr(A\_1) = (0.4)(0.3) +
+(0.2)(0.7) = 0.26 \textbackslash{]}
+
+\textbackslash vspace\{1em\} \textbackslash hrule
+\textbackslash vspace\{1.5em\}
+
+\textbackslash subsubsection*\{Example 3.1 (Part 2)\}
+
+Suppose a policyholder has an accident within one year.
+
+Find the probability that the policyholder is accident prone.
+
+The desired probability: \textbackslash{[} \textbackslash Pr(A
+\textbackslash mid A\_1) =
+\textbackslash frac\{\textbackslash Pr(AA\_1)\}\{\textbackslash Pr(A\_1)\}
+\textbackslash{]}
+
+Using conditional probability: \textbackslash{[} \textbackslash Pr(A
+\textbackslash mid A\_1) =
+\textbackslash frac\{\textbackslash Pr(A)\textbackslash Pr(A\_1
+\textbackslash mid A)\}\{\textbackslash Pr(A\_1)\} \textbackslash{]}
+
+Substituting: \textbackslash{[} \textbackslash Pr(A \textbackslash mid
+A\_1) = \textbackslash frac\{(0.3)(0.4)\}\{0.26\} =
+\textbackslash frac\{6\}\{13\} \textbackslash{]}
+
+\textbackslash vspace\{1em\} \textbackslash hrule
+\textbackslash vspace\{1.5em\}
+
+\textbackslash section*\{2. Formal Introduction: Law of Total
+Probability and Bayes' Theorem\}
+
+\textbackslash subsection*\{2.1 Law of Total Probability\}
+
+This result is known as the \textbackslash textbf\{Law of Total
+Probability (Formula 3.4)\}.
+
+\textbackslash vspace\{1em\} \textbackslash hrule
+\textbackslash vspace\{1.5em\}
+
+\textbackslash subsection*\{2.2 Bayes' Formula\}
+
+Using: \textbackslash{[} \textbackslash Pr(AB\_i) =
+\textbackslash Pr(B\_i \textbackslash mid A)\textbackslash Pr(A)
+\textbackslash{]}
+
+we obtain the \textbackslash textbf\{Bayes Formula (Proposition 3.1)\}.
+
+Definitions:
+
+\textbackslash begin\{itemize\} \textbackslash item (
+\textbackslash Pr(B\_i) ): \textbackslash emph\{a priori\} probability
+\textbackslash item ( \textbackslash Pr(B\_i \textbackslash mid A) ):
+\textbackslash emph\{a posteriori\} probability of event (B\_i) given
+(A) \textbackslash end\{itemize\}
+
+\textbackslash vspace\{1em\} \textbackslash hrule
+\textbackslash vspace\{1.5em\}
+
+\textbackslash subsection*\{2.3 Learning by Example\}
+
+\textbackslash subsubsection*\{Example 3.2\}
+
+Three cards:
+
+\textbackslash begin\{itemize\} \textbackslash item One card with both
+sides red (RR) \textbackslash item One card with both sides black (BB)
+\textbackslash item One card with one red side and one black side (RB)
+\textbackslash end\{itemize\}
+
+One card is randomly selected and placed on the ground.
+
+The upper side is red.
+
+Let:
+
+\textbackslash begin\{itemize\} \textbackslash item (RR, BB, RB): events
+describing the selected card \textbackslash item (R): event that the
+upturned side is red \textbackslash end\{itemize\}
+
+The required probability: \textbackslash{[} \textbackslash Pr(RB
+\textbackslash mid R) = \textbackslash frac\{\textbackslash Pr(R
+\textbackslash mid RB)\textbackslash Pr(RB)\} \{\textbackslash Pr(R
+\textbackslash mid RR)\textbackslash Pr(RR) + \textbackslash Pr(R
+\textbackslash mid RB)\textbackslash Pr(RB) + \textbackslash Pr(R
+\textbackslash mid BB)\textbackslash Pr(BB)\} \textbackslash{]}
+
+Substituting: \textbackslash{[} \textbackslash Pr(RB \textbackslash mid
+R) = \textbackslash frac\{(1/2)(1/3)\} \{(1)(1/3) + (1/2)(1/3) +
+(0)(1/3)\} = \textbackslash frac\{1\}\{3\} \textbackslash{]}
+
+The experiment consists of six equally likely outcomes:
+\textbackslash{[} R\_1, R\_2, B\_1, B\_2, R\_3, B\_3 \textbackslash{]}
+
+The other side of the upturned red side is black only if the outcome is
+(R\textbackslash textsubscript\{3\}).
+
+Thus, the conditional probability is (1/3).
+
+\textbackslash vspace\{1em\} \textbackslash hrule
+\textbackslash vspace\{1.5em\}
+
+\textbackslash section*\{3. Random Variables\}
+
+\textbackslash subsection*\{3.1 Motivation and Concept\}
+
+When an experiment is performed, interest may lie in a function of the
+outcome rather than the outcome itself.
+
+Examples:
+
+\textbackslash begin\{itemize\} \textbackslash item Dice tossing: sum of
+two dice \textbackslash item Coin flipping: total number of heads
+\textbackslash end\{itemize\}
+
+These real-valued functions defined on the sample space are called
+\textbackslash textbf\{random variables\}.
+
+\textbackslash begin\{itemize\} \textbackslash item Values are
+determined by outcomes of an experiment \textbackslash item
+Probabilities are assigned to possible values
+\textbackslash end\{itemize\}
+
+The distribution of a random variable can be visualized as a bar
+diagram:
+
+\textbackslash begin\{itemize\} \textbackslash item x-axis: values the
+random variable can take \textbackslash item height at value (a):
+(\textbackslash Pr{[}X = a{]}) \textbackslash end\{itemize\}
+
+\textbackslash vspace\{1em\} \textbackslash hrule
+\textbackslash vspace\{1.5em\}
+
+\textbackslash subsection*\{3.2 Examples\}
+
+\textbackslash subsubsection*\{Example 1: Tossing Three Fair Coins\}
+
+The experiment consists of tossing three fair coins.
+
+Let (Y) denote the number of heads.
+
+Possible values: (0, 1, 2, 3)
+
+\textbackslash{[} \textbackslash Pr(Y=0) = \textbackslash Pr(t,t,t) =
+\textbackslash frac\{1\}\{8\} \textbackslash{]} \textbackslash{[}
+\textbackslash Pr(Y=1) = \textbackslash Pr(t,t,h),(t,h,t),(h,t,t) =
+\textbackslash frac\{3\}\{8\} \textbackslash{]} \textbackslash{[}
+\textbackslash Pr(Y=2) = \textbackslash Pr(t,h,h),(h,t,h),(h,h,t) =
+\textbackslash frac\{3\}\{8\} \textbackslash{]} \textbackslash{[}
+\textbackslash Pr(Y=3) = \textbackslash Pr(h,h,h) =
+\textbackslash frac\{1\}\{8\} \textbackslash{]}
+
+Since (Y) must take one of the values (0) through (3): \textbackslash{[}
+\textbackslash sum\_y \textbackslash Pr(Y=y) = 1 \textbackslash{]}
+
+\textbackslash vspace\{1em\} \textbackslash hrule
+\textbackslash vspace\{1.5em\}
+
+\textbackslash section*\{4. Probability Mass Function (PMF)\}
+
+\textbackslash subsection*\{4.1 Concept\}
+
+A random variable that can take at most a countable number of possible
+values is said to be \textbackslash textbf\{discrete\}.
+
+Let (X) be a discrete random variable with range: \textbackslash{[} R\_X
+= \textbackslash\{x\_1, x\_2, x\_3, \textbackslash ldots\textbackslash\}
+\textbackslash{]}
+
+The function: \textbackslash{[} p(x\_k) = \textbackslash Pr(X = x\_k)
+\textbackslash{]}
+
+is called the \textbackslash textbf\{Probability Mass Function (PMF)\}
+of (X).
+
+Since (X) must take one of the values (x\_k): \textbackslash{[}
+\textbackslash sum\_k p(x\_k) = 1 \textbackslash{]}
+
+\textbackslash vspace\{1em\} \textbackslash hrule
+\textbackslash vspace\{1.5em\}
+
+\textbackslash subsection*\{4.2 Example: Two Independent Tosses of a
+Fair Coin\}
+
+(As presented in the lecture slides.)
+
+\textbackslash vspace\{1em\} \textbackslash hrule
+\textbackslash vspace\{1.5em\}
+
+\textbackslash subsection*\{4.3 Example\}
+
+The probability mass function of a random variable (X) is given by:
+\textbackslash{[} p(i) = c\textbackslash lambda\^{}i,
+\textbackslash quad i = 0,1,2,\textbackslash ldots \textbackslash{]}
+where (\textbackslash lambda \textgreater{} 0).
+
+Find:
+
+\textbackslash begin\{itemize\} \textbackslash item
+(\textbackslash Pr(X=0)) \textbackslash item
+(\textbackslash Pr(X\textgreater2)) \textbackslash end\{itemize\}
+
+(As stated and shown in the lecture slides.)
+
+\textbackslash vspace\{1em\} \textbackslash hrule
+\textbackslash vspace\{1.5em\}
+
+\textbackslash section*\{5. Class Participation\}
+
+Students were instructed to switch to
+\textbackslash textbf\{Campuswire\} for class participation and
+discussion.
+
+\textbackslash end\{document\}
