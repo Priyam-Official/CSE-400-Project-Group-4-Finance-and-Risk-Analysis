@@ -1,0 +1,219 @@
+PROMPT 1 FOR THE SCRIBE
+
+Generate a lecture scribe intended strictly for exam preparation for the course:
+
+CSE 400: Fundamentals of Probability and Random Variables
+(SEAS, Ahmedabad University)
+
+The scribe must faithfully reproduce the lecture “Types of Continuous Random Variables”, including:
+
+Formal definitions
+
+Worked examples
+
+Problem-solving portions
+
+In-class activity on Gaussian Simulation and Gaussian Density Estimation
+
+All numerical examples and probability questions must be taken strictly from the question images provided by the user for each random variable.
+Do not create, modify, or add any questions of your own.
+
+General Writing Rules
+
+For each random variable, begin with brief formal content only:
+
+Definition
+
+Support
+
+Probability Density Function (PDF)
+
+Immediately after the formal content, solve the question exactly as shown in the uploaded image corresponding to that random variable.
+
+Use only the formulas, probability expressions, integrals, transformations, identities, figures, and code constructs required to solve the provided question.
+
+Write all derivations, computations, and steps explicitly and sequentially, exactly as done in lecture.
+
+Do not add intuition, motivation, commentary, interpretations, shortcuts, or alternative methods.
+
+Do not introduce new examples, exercises, assumptions, or conclusions.
+
+Maintain exam-oriented formatting and notation consistency with classroom lectures.
+
+Required Lecture Structure
+
+(Follow This Order Exactly)
+
+1. Uniform Random Variable
+
+Include:
+
+Definition of a continuous uniform random variable
+
+Support
+
+Probability Density Function (PDF)
+
+Then:
+
+Solve only the question shown in the uploaded image for the Uniform Random Variable.
+
+Follow the same solution steps, integrals, and transformations used in the lecture.
+
+2. Exponential Random Variable
+
+Include:
+
+Definition of an exponential random variable
+
+Support
+
+Probability Density Function (PDF)
+
+Then:
+
+Solve only the question shown in the uploaded image for the Exponential Random Variable.
+
+Perform all probability calculations and transformations step by step.
+
+If a random variable transformation is required, derive the CDF and PDF exactly as demonstrated in class.
+
+3. Laplace Random Variable
+
+Include:
+
+Definition of a Laplace random variable
+
+Support
+
+Probability Density Function (PDF)
+
+Then:
+
+Solve only the question shown in the uploaded image for the Laplace Random Variable.
+
+Write all integrals with limits and evaluate them explicitly.
+
+Follow the same conditional probability structure used in lecture.
+
+4. Gamma Random Variable
+
+Include:
+
+Definition of the Gamma function as used in class
+
+Then:
+
+Reproduce the proofs or derivations exactly as shown in the lecture and corresponding question image.
+
+Include only identities, steps, and results that appear in the lecture.
+
+Include any homework problem statement only if shown in the image, without adding a solution unless explicitly demonstrated in class.
+
+5. In-Class Activity: Gaussian Simulation and Gaussian Density Estimation
+
+(Google Colab)
+
+Present this section at the end of the scribe, structured exactly as a classroom coding demonstration.
+
+Activity Overview
+
+Simulate Gaussian random variables
+
+Visualize probability distributions
+
+Learn Gaussian density estimation from data
+
+Apply the method to real-world problems
+
+Step-by-Step Activity Structure
+
+1. Motivation
+
+Real-world measurements are uncertain due to noise and randomness
+
+Examples:
+
+Sensor measurements
+
+Network packet delays
+
+Image sensor noise
+
+2. Gaussian Simulation with Known Parameters
+
+Import required libraries (numpy, matplotlib)
+
+Define:
+
+Number of samples
+
+True mean
+
+True standard deviation
+
+Generate Gaussian samples using randomized simulation
+
+3. Visualizing the Distribution
+
+Construct a histogram with fixed bin widths
+
+Compute histogram centers
+
+Define the true Gaussian PDF using known parameters
+
+Plot histogram and true PDF together
+
+4. Reality Check: Unknown Parameters
+
+Real-world data provides only samples
+
+Parameters are unknown a priori
+
+5. Gaussian Density Estimation from Data
+
+Generate Gaussian samples
+
+Add measurement noise
+
+Construct histogram of observed data
+
+Estimate parameters:
+
+Sample mean
+
+Sample standard deviation
+
+Construct estimated Gaussian PDF
+
+Plot histogram and estimated PDF together
+
+6. Application: Packet Delay in Networks
+
+Simulate packet delay using a Gaussian model
+
+Apply non-negative delay constraint
+
+Construct histogram
+
+Estimate Gaussian parameters
+
+Plot observed delays and estimated density
+
+7. Key Takeaways
+
+Gaussian simulation uses randomized algorithms
+
+Density estimation learns distributions from data
+
+The same methodology applies across applications
+
+Important Instruction
+
+All mathematical problems, numerical values, and probability questions must be extracted directly from the uploaded question images.
+Do not restate the question unless necessary; proceed directly to the solution in lecture style.
+
+
+PROMPT 2 FOR THE SCRIBE TO LATEX TRANSITION
+
+Generate a LaTeX code based on the given Lecture Scribe. Do not change any equation or word formation initially in the Scribe and also do not include any other external information or concepts which are not already in the Scribe. do not include This scribe **faithfully reproduces the lecture** using **only** the material, numerical values, and questions visible in the uploaded images. No additional examples, interpretations, shortcuts, or assumptions are introduced. All steps are written **explicitly and sequentially**, following classroom notation and structure.

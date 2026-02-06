@@ -1,0 +1,168 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+\title{Lecture Scribe: Gaussian Simulation and Density Estimation}
+\author{Name: Masoom Choksi \\ AUID: AU2440263}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section*{Course Information}
+\textbf{Course:} CSE400 -- Probability and Random Variables
+
+\section{In-Class Activity: Gaussian Simulation and Density Estimation}
+
+This lecture covers:
+\begin{itemize}
+\item Simulation of Gaussian random variables
+\item Visualization of probability distributions
+\item Gaussian density estimation from data
+\item Application of Gaussian density estimation to real-world problems
+\end{itemize}
+
+\section{Why Do We Need Probability Models?}
+
+Real-world measurements are uncertain due to noise and randomness. Examples include:
+\begin{itemize}
+\item Sensor measurements
+\item Network packet delays
+\item Image sensor noise
+\end{itemize}
+
+Such uncertainty is modeled using \textbf{Gaussian random variables}, and their distributions are estimated from data.
+
+\section{Gaussian Random Variable Simulation (Known Parameters)}
+
+\subsection{Assumptions}
+\begin{itemize}
+\item The random variable is Gaussian.
+\item The mean and standard deviation are known.
+\item Parameters are not estimated at this stage.
+\end{itemize}
+
+\subsection{Definition (Gaussian Random Variable)}
+A random variable $X$ is Gaussian with mean $\mu$ and standard deviation $\sigma$ if its probability density function (PDF) is
+\[
+f_X(x) = \frac{1}{\sqrt{2\pi}\sigma}
+\exp\!\left(-\frac{(x-\mu)^2}{2\sigma^2}\right).
+\]
+
+\subsection{Simulation Parameters}
+\[
+N = 100000, \quad \mu_{\text{true}} = 0.0, \quad \sigma_{\text{true}} = 4.0.
+\]
+
+\subsection{Simulation}
+Samples are generated as
+\[
+x_i = \sigma_{\text{true}} Z_i + \mu_{\text{true}},
+\]
+where $Z_i \sim \mathcal{N}(0,1)$.
+
+\section{Visualizing the Distribution}
+
+\subsection{Histogram Construction}
+\begin{itemize}
+\item Bin range: $[-15, 25]$
+\item Bin width: $1.0$
+\item Histogram normalized to form a density
+\end{itemize}
+
+\subsection{True PDF}
+For visualization, the true Gaussian PDF is
+\[
+f_X(x) = \frac{1}{\sqrt{2\pi}\sigma_{\text{true}}}
+\exp\!\left(-\frac{(x-\mu_{\text{true}})^2}{2\sigma_{\text{true}}^2}\right).
+\]
+
+\section{Reality Check: Unknown Parameters}
+
+\subsection{Assumptions}
+\begin{itemize}
+\item The distribution is Gaussian.
+\item The parameters (mean and variance) are unknown.
+\item Only data samples are observed.
+\end{itemize}
+
+Gaussian density estimation is used to estimate the underlying distribution from data.
+
+\section{Gaussian Density Estimation from Data}
+
+\subsection{Simulation Parameters}
+\[
+N_e = 200, \quad \mu_{\text{true}} = 0.0, \quad \sigma_{\text{true}} = 4.0.
+\]
+
+\subsection{Observed Data Model}
+\begin{itemize}
+\item True samples: $x_i \sim \mathcal{N}(\mu_{\text{true}}, \sigma_{\text{true}}^2)$
+\item Measurement noise: $n_i \sim \mathcal{N}(0, \sigma_n^2)$, where $\sigma_n = 1.5$
+\end{itemize}
+
+Observed data:
+\[
+x_i^{\text{obs}} = x_i + n_i.
+\]
+
+\subsection{Parameter Estimation}
+The Gaussian parameters are estimated from observed data as
+\[
+\hat{\mu} = \frac{1}{N_e}\sum_{i=1}^{N_e} x_i^{\text{obs}},
+\qquad
+\hat{\sigma} = \sqrt{\frac{1}{N_e}\sum_{i=1}^{N_e}
+\left(x_i^{\text{obs}} - \hat{\mu}\right)^2}.
+\]
+
+\subsection{Estimated PDF}
+\[
+\hat{f}_X(x) = \frac{1}{\sqrt{2\pi}\hat{\sigma}}
+\exp\!\left(-\frac{(x-\hat{\mu})^2}{2\hat{\sigma}^2}\right).
+\]
+
+\section{Application: Packet Delay in Networks}
+
+\subsection{Assumptions}
+\begin{itemize}
+\item Packet delay is modeled as a single Gaussian random variable.
+\item Delays are non-negative (physical constraint).
+\end{itemize}
+
+\subsection{Simulation Parameters}
+\[
+N = 150, \quad \mu = 45.0~\text{ms}, \quad \sigma = 8.0~\text{ms}.
+\]
+
+\subsection{Data Generation}
+Packet delays are generated as
+\[
+D_i \sim \mathcal{N}(\mu, \sigma^2), \quad D_i > 0.
+\]
+
+\subsection{Density Estimation}
+Estimated parameters:
+\[
+\hat{\mu} = \frac{1}{N}\sum_{i=1}^N D_i,
+\qquad
+\hat{\sigma} = \sqrt{\frac{1}{N}\sum_{i=1}^N (D_i - \hat{\mu})^2}.
+\]
+
+Estimated Gaussian density:
+\[
+\hat{f}_D(d) =
+\frac{1}{\sqrt{2\pi}\hat{\sigma}}
+\exp\!\left(-\frac{(d-\hat{\mu})^2}{2\hat{\sigma}^2}\right).
+\]
+
+\section{Key Takeaways}
+
+\begin{itemize}
+\item Gaussian simulation uses randomized algorithms.
+\item Density estimation learns distributions from data.
+\item The same method applies across different applications.
+\item The objective is to estimate \textbf{distributions}.
+\end{itemize}
+
+\end{document}
