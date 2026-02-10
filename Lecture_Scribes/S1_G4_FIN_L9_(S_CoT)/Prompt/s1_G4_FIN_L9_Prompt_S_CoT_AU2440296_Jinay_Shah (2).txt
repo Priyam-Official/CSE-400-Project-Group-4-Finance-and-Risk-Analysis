@@ -1,0 +1,58 @@
+Generate a lecture scribe intended strictly as exam-oriented reference material for
+CSE 400: Fundamentals of Probability in Computing – Lecture 9, covering continuous random variables, as taught in the lecture.
+
+Use only the provided context:
+
+Lecture 9 slides / lecture PDF
+
+Any explicitly relevant textbook content directly associated with Lecture 9
+
+Do not introduce any material, definitions, notation, explanations, intuition, assumptions, examples, proofs, applications, or results that are not explicitly present in the provided context.
+
+While writing the scribe, reason step by step exactly as done in the lecture, and include all reasoning in the final scribe, covering:
+
+Definition of continuous random variables
+
+Probability density function (PDF) and cumulative distribution function (CDF) as presented
+
+Uniform random variable
+
+PDF and CDF definitions
+
+Graphical interpretation exactly as shown
+
+Worked example(s) with all intermediate probability calculations
+
+Exponential random variable
+
+PDF and CDF definitions
+
+Graphical interpretation as shown
+
+Worked example(s), including generalization steps exactly as derived in the lecture
+
+Any applications, interpretations, or problem-solving steps explicitly discussed in class
+
+Ensure that:
+
+All derivations, probability computations, inequalities, and transformations are shown step by step
+
+The order, structure, notation, and logical flow strictly follow the lecture
+
+Every example is reconstructed exactly as solved in the lecture, with no compression or omission
+
+Maintain a formal academic tone suitable for a reading-based / closed-notes examination.
+
+Do not:
+
+Add summaries, commentary, or intuition
+
+Simplify explanations
+
+Introduce alternative solution methods
+
+Reorder topics
+
+Add material not traceable to the lecture or textbook context
+
+The final output must be a faithful, complete reconstruction of Lecture 9, such that a student studying only this scribe can reliably reproduce all definitions, derivations, and example solutions from the lecture.
